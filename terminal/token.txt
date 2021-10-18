@@ -1,0 +1,36 @@
+For Linux based OS
+You'll need to set up a login and email address in the local GIT client for Linux.
+1
+2
+3
+$ git config --global user.name "your_github_username" 
+$ git config --global user.email "your_github_email" 
+$ git config -l
+After configuring GIT, we can use it to access GitHub. Use your Github Personal Access Token instead of the password
+1
+2
+3
+4
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY 
+> Cloning into ... 
+$ Username for 'https://github.com' : Enter your github username 
+$ Password for 'https://github.com' : Enter your github personal access token here
+You may now cache the provided record on your computer to store the token.
+1
+$ git config --global credential.helper cache
+To verify, try pulling with -v.
+1
+$ git pull -v
+You can remove the cache record if necessary.
+1
+2
+$ git config --global --unset credential.helper 
+$ git config --system --unset credential.helper
+Developer's Hack for All OS
+Go to your local computer's project folder.
+To update the remote URL just type
+1
+$ git remote set-url origin https://[githubtoken]@github.com/[username]/[repositoryname].git
+Or, if you are cloning
+1
+$ git clone https://[username]:[githubtoken]@github.com/[username]/[repositoryname].git
