@@ -1,0 +1,16 @@
+
+let's say I have a directory called project1 in my /var/opt location and my user name is mir
+
+cd /var/opt
+
+sudo chown mir project1
+
+However, if you already created some file before applying chown, don't forget to change their permission also
+
+sudo chown your_username your_project_directory/your_file_name
+
+Example
+
+sudo chown mir project1/file1.txt
+
+It's recommended because it neither creates any security issue nor gives unnecessary access to your projects to the others. It solves your problem by keeping your's project up to you. Because using the chown command you have limited the full access of your project directory within your user account.
